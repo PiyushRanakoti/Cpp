@@ -2,6 +2,8 @@
 #include<stdlib.h>
 using namespace std;
 
+
+//display the array of numbers
 void display(int a[],int size){
 	for(int i =0;i < size;i++){
 		cout<< a[i] <<" ";
@@ -9,6 +11,7 @@ void display(int a[],int size){
 	cout<<endl;
 }
 
+//merges and sorts array
 void merge(int arr[],int l,int m ,int r){
 
 	int n1 = m-l+1 , n2 = r-m;
@@ -36,6 +39,7 @@ void merge(int arr[],int l,int m ,int r){
 		
 }
 
+//divdes array into smaller unsorted subarray
 void mergesort(int arr[],int l , int r){
 	if(l<r){
 		int mid = l + (r-l)/2;
@@ -49,9 +53,11 @@ void mergesort(int arr[],int l , int r){
 int main(){
 	int arr[]= {2,7,2,6,4,8,9};
 	int size = sizeof(arr)/sizeof(int);
-	display(arr,size);
+	display(arr,size);  // 2 7 2 6 4 8 9 
+
+
 	mergesort(arr,0,size-1);
 
-	display(arr,size);
+	display(arr,size); //9 8 7 6 4 2 2 
 	return 0 ;
 }
